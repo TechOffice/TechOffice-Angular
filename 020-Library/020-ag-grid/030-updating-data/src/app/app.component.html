@@ -1,0 +1,19 @@
+<div>
+    <ag-grid-angular 
+      style="width: 1000px; height: 200px;" 
+      class="ag-theme-balham"
+      (gridReady)="onGridReady($event)"
+      [rowData]="rowData" 
+      [columnDefs]="columnDefs">
+    </ag-grid-angular>
+</div>
+
+<div>
+  <button (click)="updateDataByRowData()">Update Data By Row Data</button>
+  <button (click)="updateDataByUpdatingData()">Update Data By Updating Data</button>
+  <button (click)="updateDataByUpdatingDataCol1Only()">updateDataByUpdatingDataCol1Only</button>
+</div>
+
+<div>
+  <app-log></app-log>
+</div>

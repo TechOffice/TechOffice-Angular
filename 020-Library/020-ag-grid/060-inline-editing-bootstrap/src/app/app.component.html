@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="grid-wrapper">
+    <ag-grid-angular  
+      class="ag-theme-balham"
+      [rowData]="rowData" 
+      [columnDefs]="columnDefs"
+      [gridOptions]="gridOptions"
+      (gridReady)="gridReady($event)"
+      [domLayout]="'autoHeight'">
+    </ag-grid-angular>
+  </div>
+  <button>Add</button>
+</div>

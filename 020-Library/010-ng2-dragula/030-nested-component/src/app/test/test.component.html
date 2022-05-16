@@ -1,0 +1,15 @@
+<div style="border: 1px solid black">
+  <div>
+      name: {{config.name}}
+  </div>
+  <div>
+      type: {{config.type}} <span *ngIf="config.type==='CONTAINER'">[{{config.items.length}}]</span>
+  </div>
+  <div *ngIf="config.type==='CONTAINER'" >
+    <div dragula="DRAGGABLES" [(dragulaModel)]="config.items" class="container">
+      <div *ngFor="let item of config.items">
+        <app-test [config]="item"></app-test>  
+      </div>
+  </div>
+  </div>
+</div>

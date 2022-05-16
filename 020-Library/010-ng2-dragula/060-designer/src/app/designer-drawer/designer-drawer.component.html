@@ -1,0 +1,13 @@
+<div>
+  <div dragula="DRAGGABLES" class="designer-drawer-container" [(dragulaModel)]="drawerContainers">
+    <div class="designer-drawer-item" *ngFor="let drawerContainer of drawerContainers">
+      {{drawerContainer.desc}}
+    </div>
+  </div>
+  <hr/>
+  <div dragula="DRAGGABLES" class="designer-drawer-container" [(dragulaModel)]="drawerItems">
+    <div class="designer-drawer-item" *ngFor="let drawerItem of drawerItems">
+      {{drawerItem.desc}}
+    </div>
+  </div>
+</div>

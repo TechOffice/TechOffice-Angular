@@ -1,0 +1,54 @@
+<div style="padding: 10px">
+  <div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      Custom Timezone:
+      <input type="number" [(ngModel)]="timezone" min="-12" max="12"/>
+      <button (click)="updateTimeZone()">Update Timezone</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      Custom Timezone Datepicker:
+	    <app-custom-timezone-datepicker  [(ngModel)]="testDate"></app-custom-timezone-datepicker>
+    </div>
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      <textarea [(ngModel)]="testDateJsonStr"></textarea>
+      <button (click)="loadTestDate()">Data Load</button>
+    </div>
+  </div>
+  <div>
+    <b>Date Value (UTC Timezone):</b>
+    {{testDate | date: 'yyyy/MM/dd HH:mm:ss': 'UTC'}}
+  </div>
+  <div>
+    <b>Date Value (Browser Timezone):</b>
+    {{testDate | date: 'yyyy/MM/dd HH:mm:ss'}}
+  </div>
+  <div>
+    <b>Browser Timezone</b>
+    {{browserTimezone}}
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      Custom Timezone Datepicker:
+	    <app-custom-timezone-daterangepicker  [(ngModel)]="testDates"></app-custom-timezone-daterangepicker>
+    </div>
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      <textarea [(ngModel)]="testDatesJsonStr"></textarea>
+      <button (click)="loadTestDates()">Data Load</button>
+    </div>
+  </div>
+</div>
+<div>
+  <b>Date Value (UTC Timezone):</b>
+  {{testDates[0] | date: 'yyyy/MM/dd HH:mm:ss': 'UTC'}} - {{testDates[1] | date: 'yyyy/MM/dd HH:mm:ss': 'UTC'}}
+</div>
+<div>
+  <b>Date Value (Browser Timezone):</b>
+  {{testDates[0] | date: 'yyyy/MM/dd HH:mm:ss'}} - {{testDates[1] | date: 'yyyy/MM/dd HH:mm:ss'}}
+</div>
+<div>
+  <b>Browser Timezone</b>
+  {{browserTimezone}}
+</div>

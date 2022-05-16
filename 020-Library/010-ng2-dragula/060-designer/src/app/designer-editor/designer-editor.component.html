@@ -1,0 +1,28 @@
+<div *ngIf="config">
+  <form>
+      <div *ngIf="config.type==='CONTAINER'">
+        Container
+        <div>
+            <select [(ngModel)]="config.containerConfig.direction" name="containerConfig.direction">
+              <option value="ROW">Row</option>
+              <option value="COLUMN">Column</option>
+            </select>
+        </div>
+      </div>
+      <div *ngIf="config.type==='ITEM'">
+        <div *ngIf="config.controlType!=='LABEL'">
+          <input [(ngModel)]="config.name" name="name"/>
+        </div>
+        <div>
+          <input [(ngModel)]="config.label" name="label"/>
+        </div>
+        <div>
+          <select [(ngModel)]="config.controlType" name="controlType">
+            <option value="INPUT">Input</option>
+            <option value="NUMBER">Number</option>
+            <option value="DATEPICKER">Datepicker</option>
+          </select>
+        </div>
+      </div>
+  </form>
+</div>

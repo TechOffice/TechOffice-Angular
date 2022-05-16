@@ -1,0 +1,33 @@
+<div>
+  <div *ngIf="config.controlType==='BUTTON'">
+    <app-designer-item-preview-button [config]="config"></app-designer-item-preview-button>
+  </div>
+  <div *ngIf="config.controlType==='INPUT'">
+    <input disabled/>
+  </div>
+  <div *ngIf="config.controlType==='TEXTAREA'">
+    <textarea disabled></textarea>
+  </div>
+  <div *ngIf="config.controlType==='SELECT'">
+    <select disabled>
+    </select>
+  </div>
+  <div *ngIf="config.controlType==='CEHCKBOX'">
+    <input disabled/>
+  </div>
+  <div *ngIf="config.controlType==='TABLE'">
+    <table border="1">
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="config.controlType==='LABEL'">
+    <label>{{config.label?config.label:'New Label'}}</label>
+  </div>
+</div>

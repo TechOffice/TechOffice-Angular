@@ -1,0 +1,24 @@
+<div style="border: 1px solid black" (click)="onSelectItem($event)">
+  <div style="display: flex">
+      <div *ngIf="config.type==='CONTAINER'">
+          {{config.type}} <span *ngIf="config.type==='CONTAINER'">[{{config.items?config.items.length:0}}]</span>
+      </div>
+      <div *ngIf="config.type === 'ITEM'">
+          name: {{config.name}}
+      </div>
+      <div *ngIf="config.type!=='DESIGNER'">
+          <button (click)="onDeleteClick()">Delete</button>
+      </div>
+  </div>
+  <ng-content></ng-content>
+  <div *ngIf="config.type==='CONTAINER' || config.type==='DESIGNER'" >
+    <div dragula="DRAGGABLES" [(dragulaModel)]="config.items" class="designer-item-container" 
+      [ngStyle]="{'display': config.containerConfig? ((config.containerConfig.direction === 'COLUMN') ? 'flex' : 'block') : 'block'}">
+      <div *ngFor="let item of config.items">
+        <app-designer-item [config]="item" (delete)="onDelete($event)">
+          <app-designer-item-preview [config]="item"></app-designer-item-preview>
+        </app-designer-item>  
+      </div>
+  </div>
+  </div>
+</div>

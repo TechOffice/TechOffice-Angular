@@ -1,0 +1,28 @@
+<div style="padding: 10px">
+  <div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      <input [value]="newDate" (change)="onInputChange($event.target.value)" style="width: 300px"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      <input type="text"
+             placeholder="Datepicker"
+             class="form-control"
+             bsDatepicker
+             [(bsValue)]="newDate"/>
+    </div>
+  </div>
+  <div>
+    <b>Value (UTC):</b>
+    {{newDate | date: 'yyyy/MM/dd HH:mm:ss': 'UTC'}}
+  </div>
+  <div>
+    <b>Value</b>
+    {{newDate | date: 'yyyy/MM/dd HH:mm:ss'}}
+  </div>
+  <div>
+    <b>newDateToIsoString</b>
+    {{newDateToIsoString()}}
+  </div>  
+</div>

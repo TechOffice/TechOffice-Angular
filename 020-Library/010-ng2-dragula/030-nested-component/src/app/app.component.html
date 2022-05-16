@@ -1,0 +1,12 @@
+<div style="border: 1px solid black">
+    <div dragula="DRAGGABLES" [(dragulaModel)]="items">
+      <div *ngFor="let item of items">
+        <app-test [config]="item"></app-test>  
+      </div>
+    </div>      
+</div>
+<div>
+  {{
+    itemsJson
+  }}
+</div>

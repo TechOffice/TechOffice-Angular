@@ -1,0 +1,16 @@
+<div style="border: 1px solid black; display: flex">
+  <div style="flex-basis: 15%">
+    <app-designer-drawer></app-designer-drawer>
+  </div>
+  <div style="flex-basis: 70%">
+    <app-designer-item [config]="config"></app-designer-item>
+  </div>
+  <div style="flex-basis: 15%">
+    <app-designer-editor></app-designer-editor>
+  </div>
+</div>
+<div>
+  {{
+    itemsJson
+  }}
+</div>
